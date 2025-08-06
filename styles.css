@@ -529,7 +529,7 @@ body.theme-long-break {
 }
 
 .setting-group input[type="number"] {
-    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 .setting-group input:focus {

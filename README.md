@@ -84,10 +84,27 @@ You can easily customize the timer by modifying the settings in the browser:
 
 ## Getting Started
 
+### Local Development
 1. Download or clone this repository
 2. Open `index.html` in your web browser
 3. Allow notifications when prompted (optional)
 4. Start your first Pomodoro session!
+
+### Deploy to GitHub Pages
+This app is ready to deploy to GitHub Pages! Here's how:
+
+1. **Push your code to GitHub** (if you haven't already)
+2. **Go to your repository Settings**
+3. **Navigate to Pages** in the left sidebar
+4. **Under Source**, select "Deploy from a branch"
+5. **Choose "main" branch** and select root folder (`/ (root)`)
+6. **Click Save**
+
+Your app will be available at: `https://yourusername.github.io/your-repo-name/`
+
+Alternatively, if you want automatic deployments on every push:
+- The included GitHub Actions workflow (`.github/workflows/deploy.yml`) will automatically deploy your site
+- Just push your changes and GitHub will handle the rest!
 
 ## Tips for Effective Use
 
