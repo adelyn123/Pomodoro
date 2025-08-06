@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tomato favicon using emoji -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍅</text></svg>">
+</head>
+<body class="theme-work">
+    <!-- Header Bar -->
+    <header class="top-header">
+        <div class="header-left">
+            <div class="logo">
+                <span class="logo-icon">🍅</span>
+                <span class="logo-text">PomodoroFocus</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <button class="header-btn" id="user-avatar" title="User Profile">
+                <span class="avatar-placeholder">👤</span>
+                <span class="btn-text">Profile</span>
+            </button>
+            <button class="header-btn" id="settings-toggle" title="Settings">
+                <span>⚙️</span>
+                <span class="btn-text">Settings</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Timer Section -->
+        <div class="container">
+            <div class="session-controls">
+                <button class="btn btn-outline active" data-mode="work" id="work-btn">Work</button>
+                <button class="btn btn-outline" data-mode="short-break" id="short-break-btn">Short Break</button>
+                <button class="btn btn-outline" data-mode="long-break" id="long-break-btn">Long Break</button>
+            </div>
+
+            <div class="timer-display">
+                <div class="time" id="time">25:00</div>
+                <div class="session-info" id="session-info">Work Session</div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary" id="play-pause-btn">Start</button>
+                <button class="btn btn-secondary" id="reset-btn">Reset</button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="session-count">
+                    Session <span id="current-session">1</span> of <span id="total-sessions">4</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task Management Section -->
+        <div class="tasks-container">
+            <div class="tasks-header">
+                <h3>Today's Tasks</h3>
+                <button class="btn btn-small" id="add-task-btn">+ Add Task</button>
+            </div>
+            <div class="task-input-container" id="task-input-container" style="display: none;">
+                <input type="text" id="task-input" placeholder="Enter a task..." maxlength="100">
+                <div class="task-input-actions">
+                    <button class="btn btn-small btn-primary" id="save-task-btn">Save</button>
+                    <button class="btn btn-small btn-secondary" id="cancel-task-btn">Cancel</button>
+                </div>
+            </div>
+            <ul class="task-list" id="task-list">
+                <li class="task-item example-task">
+                    <span class="task-text">Click "+ Add Task" to get started</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div class="settings-overlay" id="settings-overlay">
+        <div class="settings" id="settings">
+            <div class="settings-header">
+                <h3>Settings</h3>
+                <button class="close-btn" id="close-settings">×</button>
+            </div>
+            <div class="setting-group">
+                <label for="work-time">Work Time (minutes):</label>
+                <input type="number" id="work-time" value="25" min="1" max="60">
+            </div>
+            <div class="setting-group">
+                <label for="short-break-time">Short Break (minutes):</label>
+                <input type="number" id="short-break-time" value="5" min="1" max="30">
+            </div>
+            <div class="setting-group">
+                <label for="long-break-time">Long Break (minutes):</label>
+                <input type="number" id="long-break-time" value="15" min="1" max="60">
+            </div>
+            <div class="setting-group">
+                <label for="sessions-before-long-break">Sessions before long break:</label>
+                <input type="number" id="sessions-before-long-break" value="4" min="1" max="10">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
